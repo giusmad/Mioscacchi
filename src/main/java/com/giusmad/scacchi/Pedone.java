@@ -6,6 +6,14 @@ public class Pedone extends Pezzo{
     }   
     @Override
     public boolean mossaValida(int rigaPartenza, int colPartenza, int rigaArrivo, int colArrivo) {
-        return true;
+        int direzione = isBianco ? -1 : 1;
+        int rigaIniziale = isBianco ? 6 : 1;
+        if (colPartenza == colArrivo && rigaArrivo == rigaPartenza + direzione) {
+            return true;
+        }
+        if (colPartenza == colArrivo && rigaPartenza == rigaIniziale && rigaArrivo == rigaPartenza + (direzione * 2)) {
+            return true;
+        }
+        return false;
     }
 }

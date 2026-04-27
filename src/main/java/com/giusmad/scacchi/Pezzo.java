@@ -2,7 +2,7 @@ package com.giusmad.scacchi;
 
 public abstract class Pezzo {
     private String nome;
-    private boolean isBianco;
+    protected boolean isBianco;
 
     public Pezzo(boolean isBianco, String nome){
         this.nome = nome;

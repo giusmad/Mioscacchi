@@ -6,6 +6,13 @@ public class Cavallo extends Pezzo{
     }
     @Override
     public boolean mossaValida(int rigaPartenza, int colPartenza, int rigaArrivo, int colArrivo) {
-        return true;
+        int spostamentoRiga = Math.abs(rigaArrivo - rigaPartenza);
+        int spostamentoColonna = Math.abs(colArrivo - colPartenza);
+
+        boolean casoA = (spostamentoRiga == 2 && spostamentoColonna == 1);
+    
+        boolean casoB = (spostamentoRiga == 1 && spostamentoColonna == 2);
+
+        return casoA || casoB;
     }
 }

@@ -6,6 +6,10 @@ public class Alfiere extends Pezzo{
     }
     @Override
     public boolean mossaValida(int rigaPartenza, int colPartenza, int rigaArrivo, int colArrivo) {
-        return true;
+        int spostamentoRiga = Math.abs(rigaArrivo - rigaPartenza);
+        int spostamentoColonna = Math.abs(colArrivo - colPartenza);
+
+        return (spostamentoRiga == spostamentoColonna) && (spostamentoRiga > 0);
     }
+    
 }
